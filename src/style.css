@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(214, 255, 220);
+}
+
+img{
+    width: 150px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 8px rgba(0,0,0, 0.6);
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10vh auto;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.replay-container{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: -12vh auto;
+    box-shadow: 1px 1px 8px rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(214, 255, 220);
+    color: rgb(42, 142, 178);
+    font-size: 22px;
+}
+
+.replay-button{
+    padding: 15px;
+    font-size: 20px;
+    outline: none;
+    background-color: rgb(133, 212, 240);
+    border-style: none;
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px rgba(0,0,0, 0.15);
+    color: #eee;
+}
+
+.replay-button:hover{
+    box-shadow: 1px 1px 8px rgba(0,0,0, 0.35);
+    cursor: pointer;
+}
+
+h2:hover{
+    cursor: default;
+}
+
+.scene {
+    width: 150px;
+    height: 150px;
+    perspective: 600px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card__face--front {
+    border-radius: 30px;
+}
+
+.card__face--back {
+    transform: rotateY( 180deg );
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card.active{
+    transform: rotateY(0);
+  }
+  .card.active img{
+    transform: scale(1);
+  }
